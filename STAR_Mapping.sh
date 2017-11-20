@@ -21,3 +21,5 @@ star --runThreadN 32 --runMode alignReads --readFilesCommand zcat --outFilterMul
 --outSAMstrandField intronMotif --genomeLoad NoSharedMemory --genomeDir /proj/b2014097/nobackup/Niyaz/STAR/Genome/STAR-Index/ --quantMode GeneCounts --sjdbGTFfile /proj/b2014097/nobackup/Niyaz/STAR/Annotation/gencode.v27.annotation.gtf --readFilesIn $read1 $read2
 
 done
+
+for file in *.gzReadsPerGene.out.tab; do mv "$file" "${file/_R1_001_val_1.fq.gzReadsPerGene.out.tab/-ReadsPerGene.out.tab}"; done
